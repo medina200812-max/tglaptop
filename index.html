@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messenger UI</title>
+    <style>
+      body {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+      }
+      .container {
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .top {
+        background-color: rgb(37 45 59);
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 5px;
+        width: 500px;
+        z-index: 2;
+        padding: 10px;
+      }
+      .line {
+        display: flex;
+        flex-direction: row;
+        width: 450px;
+        height: 50px;
+        background-color: rgb(37 45 59);
+        gap: 170px;
+      }
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+      .stories {
+        display: flex;
+        justify-content: start;
+        flex-direction: row;
+        gap: 80px;
+        margin-left: 80px;
+      }
+      .one {
+        display: flex;
+        flex-direction: column;
+        line-height: 2px;
+      }
+      .story {
+        width: 50px;
+        border-radius: 50%;
+      }
+      .aknur {
+        margin-left: 6px;
+      }
+      .chats {
+        display: flex;
+        flex-direction: row;
+        gap: 280px;
+        height: 60px;
+        border-top: 1px solid rgba(73, 72, 72, 0.427);
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .chats:hover {
+        background-color: rgb(86, 92, 148);
+      }
+      .left {
+        margin-left: -270px;
+      }
+      .archive {
+        height: 50px;
+        margin-top: 10px;
+      }
+      .p {
+        margin: 50px;
+      }
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #fefdfd;
+        color: #fff;
+        display: flex;
+        height: 100vh;
+      }
+      .sidebar {
+        width: 30%;
+        background-color: #1a1a1a;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #333;
+      }
+
+      .sidebar .header {
+        display: flex;
+        justify-content: space-around;
+        padding: 15px;
+        border-bottom: 1px solid #333;
+      }
+
+      .sidebar .header img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .search {
+        padding: 10px;
+      }
+
+      .search input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        background: #2a2a2a;
+        color: #fff;
+      }
+
+      .chat-list {
+        flex: 1;
+        overflow-y: auto;
+      }
+
+      .chat-item {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        border-bottom: 1px solid #222;
+        cursor: pointer;
+      }
+
+      .chat-item:hover {
+        background-color: #2a2a2a;
+      }
+
+      .chat-item .icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin-right: 12px;
+      }
+
+      .chat-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .chat-info .name {
+        font-weight: bold;
+      }
+
+      .chat-info .msg {
+        font-size: 0.85rem;
+        color: #bbb;
+      }
+
+      .chat-window {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(37 45 59);
+        height: 714px;
+      }
+
+      .chat-header {
+        display: flex;
+        border-bottom: 1px solid #333;
+        font-weight: bold;
+        color: black;
+      }
+
+      .messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 15px;
+      }
+
+      .message {
+        background: #2a445a;
+        padding: 10px 15px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        max-width: 70%;
+      }
+      .msg-time {
+        font-size: 0.7rem;
+        color: #aaa;
+        margin-left: 8px;
+      }
+
+      .input-box {
+        border-top: 1px solid #333;
+        padding: 10px;
+        display: flex;
+      }
+
+      .input-box input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        background: #2a2a2a;
+        color: #fff;
+      }
+      .reshotka{
+        height: 50px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="line">
+          <img src="ttgg/3line.jpg" alt="3line" />
+          <p>Telegram</p>
+          <img src="ttgg/search.jpg" alt="lupa" />
+        </div>
+        <div class="stories">
+          <div class="one">
+            <img class="story" src="ttgg/my story.jpg" alt="my story" />
+            <p>My Story</p>
+          </div>
+          <div class="one">
+            <img cclass="story" src="ttgg/story.jpg" alt="story" />
+            <p class="aknur">Aknur</p>
+          </div>
+        </div>
+        <div class="chats">
+          <img class="archive" src="ttgg/archive.jpg" alt="archive" />
+          <p class="left">
+            <b> Archived Chats</b><br /><span
+              >Выкуп товаров из 🇨🇳 itsami..</span
+            >
+          </p>
+        </div>
+        <div class="chats">
+          <img class="archive" src="ttgg/saved.jpg" alt="saved" />
+          <p class="left"><b>Saved Messages</b><br /><span>99</span></p>
+          <p style="margin-left: -10px">20:00</p>
+        </div>
+        <div class="chats">
+          <img class="archive" src="ttgg/2f.jpg" alt="2f1" />
+          <p class="left">
+            <b>2F1 web 25/26</b><br /><span># General,🟢Home works...</span>
+          </p>
+          <p style="margin-left: -45px">19:37</p>
+        </div>
+        <div class="chats">
+          <img class="archive" src="ttgg/akni.jpg" alt="akni" />
+          <p class="left">
+            <b>акниет❣️</b><br /><span>https://aqnietqaysar...</span>
+          </p>
+          <p style="margin-left: -45px">19:36</p>
+        </div>
+        <div class="chats">
+          <img class="archive" src="ttgg/dilch.jpg" alt="dilch" />
+          <p class="left"><b>653322</b><br /><span>some quotos</span></p>
+          <p style="margin-left: 15px">15:57</p>
+        </div>
+        <div class="chats">
+          <img class="archive" src="ttgg/dil.jpg" alt="dil" />
+          <p class="left"><b>dilya😽</b><br /><span>ok</span></p>
+          <p style="margin-left: 47px">15:53</p>
+        </div>
+        <div class="chats">
+          <img class="archive" src="ttgg/jihc.jpg" alt="jihc" />
+          <p class="left">
+            <b>Jihc girls chat</b><br /><span># General, ⚡ Жатахана...</span>
+          </p>
+          <p style="margin-left: -45px">08:16</p>
+        </div>
+        <div class="chats">
+          <img class="archive" src="ttgg/moon.jpg" alt="moon" />
+          <p class="left">
+            <b>moon🌙</b><br /><span>Happy 18 (zhane birne...</span>
+          </p>
+          <p style="margin-left: -45px">Sun</p>
+        </div>
+      </div>
+    </div>
+    <div class="chat-window">
+      <div class="chat-header">
+      <img class="reshotka" src="Снимок_экрана_2025-09-14_в_14.27.00-removebg-preview.png" alt="resh"/>
+      <p style="color: white;" class="chat-header">General </br> In 2F1 web 25/26</p>
+      </div><div class="messages">
+  <div class="message">
+    айкен: https://youtu.be/bZs98lw1tcg?si=3kMGZDZgN-5h0qz
+    <span class="msg-time">07:25</span>
+  </div>
+  <div class="message">
+    айкен: https://youtu.be/8FGFaGzKZLY?si=Tut1AuamcnsdJRau
+    <span class="msg-time">07:25</span>
+  </div>
+  <div class="message">
+    акнур: https://youtu.be/W2vNPJz4-ug?feature=shared
+    <span class="msg-time">07:26</span>
+  </div>
+  <div class="message">
+    магжан: https://magzhan009.github.io/social.prof.master/
+    <span class="msg-time">08:31</span>
+  </div>
+  <div class="message">
+    гульбахыт: https://youtu.be/LcsVltcUQ14?si=Kf0bHtR6S1MqsosN
+    <span class="msg-time">08:51</span>
+  </div>
+  <div class="message">
+    каусар: https://youtu.be/oJRgjB7qCSg?feature=shared
+    <span class="msg-time">08:55</span>
+  </div>
+  <div class="message">
+    каусар: https://youtu.be/VVlQKreoTI?feature=shared
+    <span class="msg-time">08:55</span>
+  </div>
+  <div class="message">
+    нурби: https://aqnietqaysarbay-ctrl.github.io/nurbi/
+    <span class="msg-time">11:21</span>
+  </div>
+  <div class="message">
+    mina: https://youtu.be/SKOde_VjER0
+    <span class="msg-time">13:05</span>
+  </div>
+</div>
+
+      <div class="input-box">
+        <input type="text" placeholder="Write a message..." />
+      </div>
+    </div>
+  </body>
+</html>
